@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 def no_c(my_string):
     replace = ['c', 'C']
-
-    for char in my_string:
-        if char in replace:
-            my_string = my_string.replace(char, '')
-    return my_string
+    new_str = list(my_string)
+    new = ''
+    for i in range(len(my_string)):
+        if new_str[i] in replace:
+            new_str[i] = new
+    return ''.join(new_str)
