@@ -4,7 +4,7 @@ import MySQLdb
 import sys
 
 
-def main():
+if __name__ == "__main__":
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
@@ -18,7 +18,3 @@ def main():
         print(row)
     cur.close()
     conn.close()
-
-
-if __name__ == "__main__":
-    main()
