@@ -19,7 +19,7 @@ def main():
     )
 
     cursor = conn.cursor()
-    query = """SELECT * FROM states WHERE name = '{}' ORDER BY
+    query = """SELECT * FROM states WHERE states.name = '{}' ORDER BY
     states.id""".format(user_state)
     cursor.execute(query)
 
