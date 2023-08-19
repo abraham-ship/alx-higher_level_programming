@@ -10,6 +10,7 @@ if __name__ == "__main__":
     user = sys.argv[1]
     pwd = sys.argv[2]
     db = sys.argv[3]
+
     engine = create_engine(f'mysql+mysqldb://{user}:{pwd}@localhost:3306/{db}')
 
     Session = sessionmaker(bind=engine)
@@ -17,8 +18,8 @@ if __name__ == "__main__":
 
     query = session.query(State).order_by(State.id).first()
 
-    if query is not None:
-        print(f"{query.id}: {query.name}")
+    if query:
+        print("{}: {}".format(query.id, query.name))
     else:
         print("Nothing")
 
