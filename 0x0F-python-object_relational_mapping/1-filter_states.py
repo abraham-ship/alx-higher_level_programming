@@ -18,7 +18,8 @@ def main():
     )
     cursor = conn.cursor()
 
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id"
+    query = "SELECT * FROM states WHERE states.name LIKE 'N%'\
+            ORDER BY states.id"
     cursor.execute(query)
 
     state_rows = cursor.fetchall()
