@@ -1,3 +1,3 @@
 #!/bin/bash
 # a script to show methods that a server will accept
-curl -i -L -X "$1"
+curl -v -X "$1"
