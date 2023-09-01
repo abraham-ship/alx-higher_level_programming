@@ -7,13 +7,8 @@ and uses the Github API to display your id
 if __name__ == "__main__":
     import requests
     from sys import argv
+    from requests.auth import HTTPBasicAuth
 
-    usr = argv[1]
-    pwd = argv[2]
-    url = "https://api.github.com/user"
-    try:
-        response = requests.get(url, auth=(usr, pwd))
-        user_data = response.json()
-        print(user_date["id"])
-    except Exception:
-        print("None")
+    auth = HTTPBasicAuth(argv[1], argv[2])
+    r = requests.get("https://api.github.com/user", auth=auth)
+    print(r.json().get("id"))
