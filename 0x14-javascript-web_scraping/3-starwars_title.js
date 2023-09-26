@@ -7,5 +7,5 @@ request.get(url, (err, response, body) => {
   if (err) throw err;
 
   const movieData = JSON.parse(body);
-  console.log(`Title: ${movieData.title}`);
+  console.log(movieData.title);
 });
