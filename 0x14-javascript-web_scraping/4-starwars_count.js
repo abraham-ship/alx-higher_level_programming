@@ -8,8 +8,8 @@ request.get(url, (err, response, body) => {
   if (err) throw err;
 
   const movieData = JSON.parse(body);
-  const characters = movieData.characters;
-  characters.forEach((characterUrl) => {
+  const character = movieData.characters;
+  characters.forEach((character) => {
     const characterId = characterUrl.split('/').slice(-2, -1)[0];
     if (characterId === '18') {
       count += 1;
