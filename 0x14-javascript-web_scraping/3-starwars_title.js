@@ -8,7 +8,7 @@ request.get(url, (err, response, body) => {
   if (err) throw err;
 
   if (response.statusCode === 200) {
-    const movieData = JSON.parse(body);
-    console.log(`Title: ${movieData.title}`);
+	  const movieData = JSON.parse(body);
+	  console.log(`Title: ${movieData.title}`);
   }
 });
